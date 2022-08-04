@@ -35,6 +35,7 @@ extension PhotoEditorViewController {
         controller.image = image
         let navController = UINavigationController(rootViewController: controller)
         navController.modalPresentationStyle = .fullScreen
+        navController.view.backgroundColor = .white
         present(navController, animated: true, completion: nil)
     }
 
