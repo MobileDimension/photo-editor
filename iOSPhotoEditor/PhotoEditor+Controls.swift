@@ -34,6 +34,7 @@ extension PhotoEditorViewController {
         controller.delegate = self
         controller.image = image
         let navController = UINavigationController(rootViewController: controller)
+        navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true, completion: nil)
     }
 
