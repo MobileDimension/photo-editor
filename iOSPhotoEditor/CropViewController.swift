@@ -15,6 +15,9 @@ public protocol CropViewControllerDelegate: class {
 
 open class CropViewController: UIViewController {
     var constrainButtonText: String = "Constrain"
+    var squareLocalize: String = "Square"
+    var cancelLocalize: String = "Cancel"
+    var originalLocalize: String = "Original"
     
     open weak var delegate: CropViewControllerDelegate?
     open var image: UIImage? {
@@ -147,7 +150,7 @@ open class CropViewController: UIViewController {
     
     @objc func constrain(_ sender: UIBarButtonItem) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let original = UIAlertAction(title: "Original", style: .default) { [unowned self] action in
+        let original = UIAlertAction(title: originalLocalize, style: .default) { [unowned self] action in
             guard let image = self.cropView?.image else {
                 return
             }
@@ -167,7 +170,7 @@ open class CropViewController: UIViewController {
             self.cropView?.cropRect = cropRect
         }
         actionSheet.addAction(original)
-        let square = UIAlertAction(title: "Square", style: .default) { [unowned self] action in
+        let square = UIAlertAction(title: squareLocalize, style: .default) { [unowned self] action in
             let ratio: CGFloat = 1.0
 //            self.cropView?.cropAspectRatio = ratio
             if var cropRect = self.cropView?.cropRect {
@@ -215,7 +218,7 @@ open class CropViewController: UIViewController {
             }
         }
         actionSheet.addAction(widescreen)
-        let cancel = UIAlertAction(title: "Cancel", style: .default) { [unowned self] action in
+        let cancel = UIAlertAction(title: cancelLocalize, style: .default) { [unowned self] action in
             self.dismiss(animated: true, completion: nil)
         }
         actionSheet.addAction(cancel)

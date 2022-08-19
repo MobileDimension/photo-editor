@@ -55,6 +55,9 @@ public final class PhotoEditorViewController: UIViewController {
     // list of controls to be hidden
     public var hiddenControls : [control] = []
     public var constrainButtonText: String = "Constrain"
+    public var squareLocalize: String = "Square"
+    public var cancelLocalize: String = "Cancel"
+    public var originalLocalize: String = "Original"
     
     var stickersVCIsVisible = false
     var drawColor: UIColor = UIColor.black

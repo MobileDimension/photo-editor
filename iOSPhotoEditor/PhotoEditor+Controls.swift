@@ -32,6 +32,9 @@ extension PhotoEditorViewController {
     @IBAction func cropButtonTapped(_ sender: UIButton) {
         let controller = CropViewController()
         controller.constrainButtonText = constrainButtonText
+        controller.squareLocalize = squareLocalize
+        controller.cancelLocalize = cancelLocalize
+        controller.originalLocalize = originalLocalize
         controller.delegate = self
         controller.image = image
         let navController = UINavigationController(rootViewController: controller)
